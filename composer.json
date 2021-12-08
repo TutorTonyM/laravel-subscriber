@@ -12,7 +12,7 @@
         "newsletter",
         "ttm-subscribe"
     ],
-    "homepage": "https://tutortonym.com/packages/laravel/laravel-subscribe",
+    "homepage": "https://tutortonym.com/packages/laravel/laravel-subscriber",
     "authors": [
         {
             "name": "Tutor Tony M",
@@ -32,10 +32,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "TutorTonyM\\Subscriber\\TtmComandosScaffoldingServiceProvider"
+                "TutorTonyM\\Subscriber\\TtmSubscriberServiceProvider"
             ],
             "aliases": {
-                "Subscriber": "TutorTonyM\\Subscriber\\TtmComandosScaffoldingServiceProvider"
+                "Subscriber": "TutorTonyM\\Subscriber\\TtmSubscriberServiceProvider"
             }
         }
     },
