@@ -1,0 +1,44 @@
+{
+    "name": "tutortonym/laravel-subscriber",
+    "description": "Laravel Subscriber allows you to quickly integrate a subscribe/newsletter form to your laravel application.",
+    "license": "MIT",
+    "type": "package",
+    "keywords": [
+        "ttm",
+        "tutortonym",
+        "tutor tony m",
+        "laravel",
+        "subscribe",
+        "newsletter",
+        "ttm-subscribe"
+    ],
+    "homepage": "https://tutortonym.com/packages/laravel/laravel-subscribe",
+    "authors": [
+        {
+            "name": "Tutor Tony M",
+            "email": "tonym@tutortonym.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1.33",
+        "laravel/framework": "^5.7|^6.0|^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TutorTonyM\\Subscriber\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TutorTonyM\\Subscriber\\TtmComandosScaffoldingServiceProvider"
+            ],
+            "aliases": {
+                "Subscriber": "TutorTonyM\\Subscriber\\TtmComandosScaffoldingServiceProvider"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
