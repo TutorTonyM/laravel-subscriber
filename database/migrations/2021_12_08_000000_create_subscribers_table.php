@@ -16,9 +16,9 @@ class CreateSubscribersTable extends Migration
     {
         Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
-            $table->string('subscribe_email');
-            $table->timestamp('email_subscribed_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('email_unsubscribed_at')->nullable();
+            $table->string('subscriber_email');
+            $table->timestamp('subscribed_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('unsubscribed_at')->nullable();
         });
     }
 

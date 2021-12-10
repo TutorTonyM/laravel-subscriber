@@ -1,0 +1,1 @@
+<script src="{{ asset('js/vendor/TutorTonyM/subscriber.js') }}"></script>

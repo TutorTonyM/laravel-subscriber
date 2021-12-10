@@ -1,10 +1,10 @@
 <?php
 
-namespace TutorTonyM\Subscriber\Components;
+namespace TutorTonyM\Subscriber\View\Components;
 
 use Illuminate\View\Component;
 
-class SubscribeForm extends Component
+class Script extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class SubscribeForm extends Component
      */
     public function render()
     {
-        return view('components.subscribe-form');
+        return view('laravel-subscriber::script');
     }
 }
