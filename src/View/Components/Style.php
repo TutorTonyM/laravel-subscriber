@@ -5,7 +5,7 @@ namespace TutorTonyM\Subscriber\View\Components;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\Component;
 
-class Script extends Component
+class Style extends Component
 {
     /**
      * Create a new component instance.
@@ -24,9 +24,9 @@ class Script extends Component
      */
     public function render()
     {
-        $path = File::exists(resource_path('views\components\vendor\TutorTonyM\subscriber\script.blade.php'))
-            ? 'components.vendor.TutorTonyM.subscriber.script'
-            : 'ttm-subscriber::script';
+        $path = File::exists(resource_path('views\components\vendor\TutorTonyM\subscriber\style.blade.php'))
+            ? 'components.vendor.TutorTonyM.subscriber.style'
+            : 'ttm-subscriber::style';
 
         return view($path);
     }

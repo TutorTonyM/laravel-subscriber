@@ -35,6 +35,6 @@ class Email implements Rule
      */
     public function message()
     {
-        return ':attribute must be in a valid format.';
+        return 'The EMAIL must be in a valid format.';
     }
 }

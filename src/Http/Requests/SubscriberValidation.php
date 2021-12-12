@@ -25,7 +25,16 @@ class SubscriberValidation extends FormRequest
     public function rules()
     {
         return [
-            'subscriber_email' => ['required', 'string', new Email()]
+            'subscriber_email' => ['required', 'string', 'unique:subscribers,subscriber_email', new Email()]
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'subscriber_email.required' => 'You need to provide an EMAIL to subscribe.',
+            'subscriber_email.unique' => 'This EMAIL has already been registered.',
+            'subscriber_email.Email' => 'The EMAIL address has has to be in a valid format.',
         ];
     }
 }

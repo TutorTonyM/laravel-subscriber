@@ -2,6 +2,7 @@
 
 namespace TutorTonyM\Subscriber\View\Components;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\View\Component;
 
 class Form extends Component
@@ -29,6 +30,10 @@ class Form extends Component
      */
     public function render()
     {
-        return view('laravel-subscriber::form');
+        $path = File::exists(resource_path('views\components\vendor\TutorTonyM\subscriber\form.blade.php'))
+            ? 'components.vendor.TutorTonyM.subscriber.form'
+            : 'ttm-subscriber::form';
+
+        return view($path);
     }
 }
