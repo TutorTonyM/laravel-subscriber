@@ -1,6 +1,17 @@
 $(document).ready(function(){
     let form = $('#subscriber-form');
-    let modal = $('#alert-modal');
+    let alertModal = $('#alert-modal');
+    let modals = $('.subscriber-modal');
+
+    if (modals.length > 0){
+        modals.each(function(){
+            let closeButton = $(this).find('.modal-close');
+
+            closeButton.click(function(){
+                alertModal.css('display', 'none');
+            });
+        });
+    }
 
     $.ajaxSetup({
         headers: {
@@ -37,23 +48,15 @@ $(document).ready(function(){
         });
     });
 
-    if (modal.length > 0){
-        let closeButton = modal.find('#close');
-
-        closeButton.click(function(){
-            modal.css('display', 'none');
-        });
-    }
-
     function showAlert(type, title, message){
-        let titleElement = modal.find('#modal-title');
-        let messageElement = modal.find('#modal-message');
+        let titleElement = alertModal.find('.modal-title');
+        let messageElement = alertModal.find('.modal-message');
 
-        modal.addClass(type);
+        alertModal.addClass(type);
         titleElement.html(title);
         messageElement.html(message);
 
-        modal.css('display', 'block');
+        alertModal.css('display', 'block');
     }
 
     function alertSuccess(data){

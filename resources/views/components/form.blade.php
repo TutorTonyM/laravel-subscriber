@@ -29,6 +29,10 @@
                        placeholder="{{ $inputText }}">
         @endif
 
+        @if(config('subscriber.recaptcha'))
+            <input id="recaptcha-response-field" type="hidden" name="g-recaptcha-response">
+        @endif
+
         @if(isset($button))
                 <button type="submit" {{ $button->attributes }}>{{ $button == '' ? $buttonText : $button }}</button>
         @else

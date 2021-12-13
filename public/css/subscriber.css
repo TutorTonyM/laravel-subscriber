@@ -1,7 +1,7 @@
-#alert-modal {
+.subscriber-modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 99999999;
     padding-top: 100px;
     left: 0;
     top: 0;
@@ -11,12 +11,12 @@
     background-color: black;
     background-color: rgba(0, 0, 0, 0.8);
 }
-#alert-modal #modal-content {
+.subscriber-modal .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: #FEFEFE;
     margin: auto;
     padding: 0;
-    border: 1px solid #bcbebf;
+    border: 1px solid #BCBEBF;
     width: 60%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
@@ -24,38 +24,44 @@
     animation-name: animatetop;
     animation-duration: 0.4s;
 }
-#alert-modal #modal-content #modal-header {
+.subscriber-modal .modal-content .modal-header {
     padding: 20px 16px;
-    background-color: #bcbebf;
+    background-color: #BCBEBF;
     color: white;
 }
-#alert-modal #modal-content #modal-header::after {
+.subscriber-modal .modal-content .modal-header::after {
     content: "";
     display: table;
     clear: both;
 }
-#alert-modal #modal-content #modal-header #close {
-    color: white;
+.subscriber-modal .modal-content .modal-header .modal-title {
+    color: #FFFFFF;
+    float: left;
+    font-size: 28px;
+}
+.subscriber-modal .modal-content .modal-header .modal-close {
+    color: #DDDDDD;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-right: 15px;
     transition-property: all;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
 }
-#alert-modal #modal-content #modal-header #close:hover, #alert-modal #modal-content #modal-header #close:focus {
-    color: #000;
+.subscriber-modal .modal-content .modal-header .modal-close:hover, .subscriber-modal .modal-content .modal-header .modal-close:focus {
+    color: #FFFFFF;
     text-decoration: none;
     cursor: pointer;
 }
-#alert-modal #modal-content #modal-body {
+.subscriber-modal .modal-content .modal-body {
     padding: 20px 16px;
 }
-#alert-modal #modal-content #modal-footer {
+.subscriber-modal .modal-content .modal-footer {
     padding: 40px 16px;
-    background-color: #bcbebf;
-    color: white;
+    background-color: #BCBEBF;
+    color: #FFFFFF;
 }
 @-webkit-keyframes animatetop {
     from {
@@ -77,27 +83,27 @@
         opacity: 1;
     }
 }
-#alert-modal.success #modal-content #modal-header {
+.subscriber-modal.success .modal-content .modal-header {
     background-color: #77DD77;
 }
-#alert-modal.success #modal-content #modal-footer {
+.subscriber-modal.success .modal-content .modal-footer {
     background-color: #77DD77;
 }
-#alert-modal.fail #modal-content #modal-header {
+.subscriber-modal.fail .modal-content .modal-header {
     background-color: #EA4C46;
 }
-#alert-modal.fail #modal-content #modal-footer {
+.subscriber-modal.fail .modal-content .modal-footer {
     background-color: #EA4C46;
 }
-#alert-modal.info #modal-content #modal-header {
+.subscriber-modal.info .modal-content .modal-header {
     background-color: #1261A0;
 }
-#alert-modal.info #modal-content #modal-footer {
+.subscriber-modal.info .modal-content .modal-footer {
     background-color: #1261A0;
 }
-#alert-modal.warning #modal-content #modal-header {
+.subscriber-modal.warning .modal-content .modal-header {
     background-color: #F79862;
 }
-#alert-modal.warning #modal-content #modal-footer {
+.subscriber-modal.warning .modal-content .modal-footer {
     background-color: #F79862;
 }

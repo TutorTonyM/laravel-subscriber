@@ -5,7 +5,7 @@ namespace TutorTonyM\Subscriber\View\Components;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\Component;
 
-class AlertModal extends Component
+class SubscriberModals extends Component
 {
     /**
      * Create a new component instance.
