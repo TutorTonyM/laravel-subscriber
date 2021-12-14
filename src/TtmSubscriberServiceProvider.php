@@ -4,12 +4,19 @@ namespace TutorTonyM\Subscriber;
 
 use Illuminate\Support\ServiceProvider;
 use TutorTonyM\Subscriber\View\Components\AlertModal;
+use TutorTonyM\Subscriber\View\Components\Modals;
 use TutorTonyM\Subscriber\View\Components\ReCaptcha;
 use TutorTonyM\Subscriber\View\Components\ReCaptchaModal;
+use TutorTonyM\Subscriber\View\Components\ReCaptchaPush;
+use TutorTonyM\Subscriber\View\Components\ReCaptchaStack;
 use TutorTonyM\Subscriber\View\Components\Resources;
+use TutorTonyM\Subscriber\View\Components\ScriptPush;
+use TutorTonyM\Subscriber\View\Components\ScriptStack;
 use TutorTonyM\Subscriber\View\Components\Style;
 use TutorTonyM\Subscriber\View\Components\Form;
 use TutorTonyM\Subscriber\View\Components\Script;
+use TutorTonyM\Subscriber\View\Components\StylePush;
+use TutorTonyM\Subscriber\View\Components\StyleStack;
 
 class TtmSubscriberServiceProvider extends ServiceProvider
 {
@@ -24,12 +31,19 @@ class TtmSubscriberServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewComponentsAs('ttm-subscriber', [
-            Form::class,
-            Script::class,
-            Style::class,
-            ReCaptcha::class,
             AlertModal::class,
+            Form::class,
+            Modals::class,
+            ReCaptcha::class,
             ReCaptchaModal::class,
+            ReCaptchaPush::class,
+            ReCaptchaStack::class,
+            Script::class,
+            ScriptPush::class,
+            ScriptStack::class,
+            Style::class,
+            StylePush::class,
+            StyleStack::class,
         ]);
 
         $this->loadViewsFrom(__DIR__.'/../resources/views/components', 'ttm-subscriber');
