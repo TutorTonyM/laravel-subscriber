@@ -1,4 +1,4 @@
-<div id="alert-modal" class="subscriber-modal">
+<div id="subscriber-alert-modal" class="subscriber-modal">
 
     <div class="modal-content">
         <div class="modal-header">

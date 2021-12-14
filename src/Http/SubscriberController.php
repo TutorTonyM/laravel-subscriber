@@ -18,18 +18,18 @@ class SubscriberController extends Controller
 
             return response()->json([
                 'success' => true,
-                'alert_title' => 'Subscribed Successfully',
-                'alert_message' => 'Your subscription has been sent successfully. You will be receiving exclusive offers via email.'
+                'alert_title' => config('ttm-subscriber.alert-modal-title-success'),
+                'alert_message' => config('ttm-subscriber.alert-modal-message-success')
             ]);
         }
         catch (Exception $e){
             $errorMessage = config('app.env') == 'production'
-                ? 'Something went wrong and your message could not be sent. Please try again later.'
-                : 'Something went wrong and your message could not be sent. Please try again later.'.' Error Message: '.$e->getMessage();
+                ? config('ttm-subscriber.alert-modal-message-fail')
+                : config('ttm-subscriber.alert-modal-message-fail').' Error Message: '.$e->getMessage();
 
             return response()->json([
                 'success' => false,
-                'alert_title' => 'Sent Failed',
+                'alert_title' => config('ttm-subscriber.alert-modal-title-fail'),
                 'alert_message' => $errorMessage,
             ]);
         }

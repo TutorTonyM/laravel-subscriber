@@ -16,7 +16,7 @@
     background-color: #FEFEFE;
     margin: auto;
     padding: 0;
-    border: 1px solid #BCBEBF;
+    border: 5px solid #BCBEBF;
     width: 60%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
@@ -58,6 +58,10 @@
 .subscriber-modal .modal-content .modal-body {
     padding: 20px 16px;
 }
+.subscriber-modal .modal-content .modal-body .g-recaptcha > div {
+    position: relative;
+    margin: 0 auto;
+}
 .subscriber-modal .modal-content .modal-footer {
     padding: 40px 16px;
     background-color: #BCBEBF;
@@ -83,11 +87,17 @@
         opacity: 1;
     }
 }
+.subscriber-modal.success .modal-content {
+    border-color: #77DD77;
+}
 .subscriber-modal.success .modal-content .modal-header {
     background-color: #77DD77;
 }
 .subscriber-modal.success .modal-content .modal-footer {
     background-color: #77DD77;
+}
+.subscriber-modal.fail .modal-content {
+    border-color: #EA4C46;
 }
 .subscriber-modal.fail .modal-content .modal-header {
     background-color: #EA4C46;
@@ -95,15 +105,26 @@
 .subscriber-modal.fail .modal-content .modal-footer {
     background-color: #EA4C46;
 }
+.subscriber-modal.info .modal-content {
+    border-color: #1261A0;
+}
 .subscriber-modal.info .modal-content .modal-header {
     background-color: #1261A0;
 }
 .subscriber-modal.info .modal-content .modal-footer {
     background-color: #1261A0;
 }
+.subscriber-modal.warning .modal-content {
+    border-color: #F79862;
+}
 .subscriber-modal.warning .modal-content .modal-header {
     background-color: #F79862;
 }
 .subscriber-modal.warning .modal-content .modal-footer {
     background-color: #F79862;
+}
+
+#subscriber-form .subscriber-validation-error-message {
+    display: block;
+    color: #EA4C46;
 }

@@ -4,6 +4,7 @@ namespace TutorTonyM\Subscriber\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use TutorTonyM\Subscriber\Rules\Email;
+use TutorTonyM\Subscriber\Rules\ReCaptcha;
 
 class SubscriberValidation extends FormRequest
 {
@@ -24,9 +25,15 @@ class SubscriberValidation extends FormRequest
      */
     public function rules()
     {
-        return [
-            'subscriber_email' => ['required', 'string', 'unique:subscribers,subscriber_email', new Email()]
+        $rules = [
+            'subscriber_email' => ['required', 'string', 'unique:subscribers,subscriber_email', new Email()],
         ];
+
+        if (config('ttm-subscriber.google_recaptcha')){
+            $rules['g_recaptcha_response'] = ['required', new ReCaptcha()];
+        }
+
+        return $rules;
     }
 
     public function messages()
@@ -35,6 +42,7 @@ class SubscriberValidation extends FormRequest
             'subscriber_email.required' => 'You need to provide an EMAIL to subscribe.',
             'subscriber_email.unique' => 'This EMAIL has already been registered.',
             'subscriber_email.Email' => 'The EMAIL address has has to be in a valid format.',
+            'g_recaptcha_response.required' => 'The Re-Captcha is required.',
         ];
     }
 }

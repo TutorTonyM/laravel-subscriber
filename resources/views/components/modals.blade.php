@@ -1,24 +1,28 @@
-<div id="alert-modal">
+<div id="subscriber-alert-modal" class="subscriber-modal">
 
-    <div id="modal-content">
-        <div id="modal-header">
-            <span id="close">&times;</span>
-            <h2 id="modal-title"></h2>
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title"></h2>
         </div>
-        <div id="modal-body">
-            <p id="modal-message"></p>
+        <div class="modal-body">
+            <p class="modal-message"></p>
         </div>
     </div>
 
 </div>
 
-<div id="recaptcha-modal" class="modal">
+<div id="subscriber-recaptcha-modal" class="subscriber-modal info">
 
     <div class="modal-content">
-        <h1 class="modal-title">You are almost done.<br> We just need to make sure you are not a robot!</h1>
-        <div class="text-center">
+        <div class="modal-header">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title">You are almost done</h2>
+        </div>
+        <div class="modal-body">
+            <p class="modal-message">We just need to make sure you are not a robot!</p>
             <div id="g-recaptcha" class="g-recaptcha"
-                 data-sitekey="{{ config('subscriber.google_recaptcha_key') }}"
+                 data-sitekey="{{ config('ttm-subscriber.google_recaptcha_site_key') }}"
                  data-callback="submit_form"
                  data-expired-callback="close_modal"></div>
             <span class="ajax-error error-red g-recaptcha-response-error"></span>
@@ -27,20 +31,12 @@
 
     <script>
         function submit_form() {
-            let form = $('#recaptcha-modal-btn').closest('form');
-            let recaptchaField = $('#recaptcha-response-field');
-            let recaptchaToken = $('#g-recaptcha-response').val();
-            let modal = $('#recaptcha-modal');
-
-            recaptchaField.val(recaptchaToken);
-            form.submit();
-            modal.hide();
-            grecaptcha.reset()
+            $('#recaptcha-response-field').val($('#g-recaptcha-response').val());
+            $('#submit-subscription-with-recaptcha-button').closest('form').submit();
+            $('#subscriber-recaptcha-modal').hide();
         }
         function close_modal() {
-            let modal = $('#recaptcha-modal');
-            modal.hide();
-            grecaptcha.reset()
+            $('#subscriber-recaptcha-modal').hide();
         }
     </script>
 

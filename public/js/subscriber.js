@@ -1,14 +1,27 @@
 $(document).ready(function(){
     let form = $('#subscriber-form');
-    let alertModal = $('#alert-modal');
+    let alertModal = $('#subscriber-alert-modal');
+    let recaptchaModal = $('#subscriber-recaptcha-modal');
+    let submitButton = $('#submit-subscription-with-recaptcha-button');
     let modals = $('.subscriber-modal');
+
+    submitButton.click(function(event){
+        event.preventDefault();
+        if ($('#subscriber_email').val() === ''){
+            $('#subscriber_email_error').html('You need to provide an EMAIL to subscribe.');
+        }
+        else{
+            recaptchaModal.css('display', 'block');
+        }
+    });
 
     if (modals.length > 0){
         modals.each(function(){
+            let modal = $(this).closest('.subscriber-modal');
             let closeButton = $(this).find('.modal-close');
 
             closeButton.click(function(){
-                alertModal.css('display', 'none');
+                modal.css('display', 'none');
             });
         });
     }
@@ -21,14 +34,16 @@ $(document).ready(function(){
 
     form.submit(function (event) {
         event.preventDefault();
-        let errorContainer = form.find('#subscriber_email_error');
+        let errorContainers = form.find('.subscriber-validation-error-message');
+        let emailErrorContainer = form.find('#subscriber_email_error');
+        let recaptchaErrorContainer = form.find('#subscriber_recaptcha_error');
 
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
             data: form.serialize()
         }).done(function (data) {
-            errorContainer.empty();
+            errorContainers.empty();
             if (data.success) {
                 alertSuccess(data);
                 form[0].reset();
@@ -38,9 +53,11 @@ $(document).ready(function(){
             }
         }).fail(function (error) {
             if (error.status === 422){
-                let errorMessage = error.responseJSON.errors.subscriber_email;
-                errorContainer.empty();
-                errorContainer.html(errorMessage);
+                let emailErrorMessage = error.responseJSON.errors.subscriber_email;
+                let recaptchaErrorMessage = error.responseJSON.errors.g_recaptcha_response;
+                errorContainers.empty();
+                emailErrorContainer.html(emailErrorMessage);
+                recaptchaErrorContainer.html(recaptchaErrorMessage);
             }
             else{
                 showAlert(fail, 'Sent Failed Ajax', 'Something went wrong and your message could not be sent. Please try again later.');

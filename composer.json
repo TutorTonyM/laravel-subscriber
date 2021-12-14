@@ -22,7 +22,9 @@
     ],
     "require": {
         "php": "^7.1.33",
-        "laravel/framework": "^5.7|^6.0|^7.0|^8.0"
+        "laravel/framework": "^5.7|^6.0|^7.0|^8.0",
+        "guzzlehttp/guzzle": "^7.4",
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {

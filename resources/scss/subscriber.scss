@@ -1,3 +1,31 @@
+.color-light{
+    color: $light;
+}
+
+.color-dark{
+    color: $dark;
+}
+
+.color-default{
+    color: #bcbebf;
+}
+
+.color-warning{
+    color: #F79862;
+}
+
+.color-danger{
+    color: #EA4C46;
+}
+
+.color-success{
+    color: #77DD77;
+}
+
+.color-info{
+    color: #1261A0;
+}
+
 $light: #DDDDDD;
 $white: #FFFFFF;
 $dark: #333333;
@@ -29,7 +57,7 @@ $modal-head-font-size: 28px;
         background-color: $gray;
         margin: auto;
         padding: 0;
-        border: 1px solid $default;
+        border: 5px solid $default;
         width: 60%;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
         -webkit-animation-name: animatetop;
@@ -76,6 +104,13 @@ $modal-head-font-size: 28px;
 
         .modal-body {
             padding: 20px 16px;
+
+            .g-recaptcha{
+                > div{
+                    position: relative;
+                    margin: 0 auto;
+                }
+            }
         }
 
         .modal-footer {
@@ -105,6 +140,8 @@ $modal-head-font-size: 28px;
 
     &.success{
         .modal-content {
+            border-color: $success;
+
             .modal-header {
                 background-color: $success;
             }
@@ -117,6 +154,8 @@ $modal-head-font-size: 28px;
 
     &.fail{
         .modal-content {
+            border-color: $fail;
+
             .modal-header {
                 background-color: $fail;
             }
@@ -129,6 +168,8 @@ $modal-head-font-size: 28px;
 
     &.info{
         .modal-content {
+            border-color: $info;
+
             .modal-header {
                 background-color: $info;
             }
@@ -141,6 +182,8 @@ $modal-head-font-size: 28px;
 
     &.warning{
         .modal-content {
+            border-color: $warning;
+
             .modal-header {
                 background-color: $warning;
             }
@@ -149,5 +192,12 @@ $modal-head-font-size: 28px;
                 background-color: $warning;
             }
         }
+    }
+}
+
+#subscriber-form{
+    .subscriber-validation-error-message{
+        display: block;
+        color: $fail;
     }
 }

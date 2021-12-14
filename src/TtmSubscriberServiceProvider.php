@@ -15,7 +15,10 @@ class TtmSubscriberServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/ttm-subscriber.php',
+            'ttm-subscriber'
+        );
     }
 
     public function boot()
@@ -23,9 +26,9 @@ class TtmSubscriberServiceProvider extends ServiceProvider
         $this->loadViewComponentsAs('ttm-subscriber', [
             Form::class,
             Script::class,
-            AlertModal::class,
             Style::class,
             ReCaptcha::class,
+            AlertModal::class,
             ReCaptchaModal::class,
         ]);
 
@@ -59,5 +62,11 @@ class TtmSubscriberServiceProvider extends ServiceProvider
             __DIR__.'/../public/js/subscriber.js' => public_path('js/vendor/TutorTonyM/subscriber/subscriber.js'),
             __DIR__ . '/../public/css/subscriber.css' => public_path('css/vendor/TutorTonyM/subscriber/subscriber.css'),
         ], 'public');
+
+        $this->publishes([
+            __DIR__.'/../config/ttm-subscriber.php' => config_path('ttm-subscriber.php')
+        ], 'config');
+
+        $this->register();
     }
 }
