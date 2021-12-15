@@ -18,7 +18,7 @@ This package is dependent on jQuery 3 or above.
 1. [Install the package](#installation)
 2. [Publish the public files](#publishing-files)
 3. [Add the style and script components](#adding-components)
-4. [Add the form and alert-modal components](#adding-components)
+4. [Add the form and modals components](#adding-components)
 5. [Optionally, you can add attributes to the form](#form-attributes)
 
 That is all you need to use this package. However, if you want to make use of Google Re-Captcha v2 to protect your form from spambots, you will need to complete one more step.
@@ -65,11 +65,11 @@ The form component adds the form that will be used to enter the email address to
 <x-ttm-subscriber-form />
 ```
 
-#### Alert Modal Component
-The alert modal component adds the modal responsible for the alerts (success or fail) after submitting the form. This component can be place anywhere in the page as it is not visible until it gets triggered, but it is recommended to be placed towards the bottom of the page.
+#### Modals Component
+The modals component adds the modal responsible for the alerts (success or fail) after submitting the form and a modal to display the re-captcha checkbox. This component can be place anywhere in the page as it is not visible until it gets triggered, but it is recommended to be placed towards the bottom of the page.
 
 ```html
-<x-ttm-subscriber-alert-modal />
+<x-ttm-subscriber-modals />
 ```
 
 ### Form Attributes
