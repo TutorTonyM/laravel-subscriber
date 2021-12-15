@@ -14,8 +14,6 @@ This package is compatible with Laravel 5.7 and above.
 ## Dependencies
 This package is dependent on jQuery 3 or above.
 
-The package will automatically register itself, and it will be ready to use.
-
 ## How to Use
 1. [Install the package](#installation)
 2. [Publish the public files](#publishing-files)
@@ -25,7 +23,7 @@ The package will automatically register itself, and it will be ready to use.
 
 That is all you need to use this package. However, if you want to make use of Google Re-Captcha v2 to protect your form from spambots, you will need to complete one more step.
 
-6. Add the needed fields to the .env file with their corresponding values.
+6. [Add the needed fields to the .env file with their corresponding values](#using-google-re-captcha)
 
 ### Installation
 You can install the package via composer:
@@ -33,6 +31,8 @@ You can install the package via composer:
 ```bash
 composer require tutortonym/laravel-subscriber
 ```
+
+The package will automatically register itself, and it will be ready to use.
 
 ### Publishing Files
 You can publish certain files by using the artisan command vendor:publish as such:
