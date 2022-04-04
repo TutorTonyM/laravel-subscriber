@@ -9,7 +9,6 @@ use TutorTonyM\Subscriber\View\Components\ReCaptcha;
 use TutorTonyM\Subscriber\View\Components\ReCaptchaModal;
 use TutorTonyM\Subscriber\View\Components\ReCaptchaPush;
 use TutorTonyM\Subscriber\View\Components\ReCaptchaStack;
-use TutorTonyM\Subscriber\View\Components\Resources;
 use TutorTonyM\Subscriber\View\Components\ScriptPush;
 use TutorTonyM\Subscriber\View\Components\ScriptStack;
 use TutorTonyM\Subscriber\View\Components\Style;
