@@ -1,8 +1,7 @@
 <?php
 
-namespace TutorTonyM\Subscriber\Http;
+namespace TutorTonyM\Subscriber\Http\Controllers;
 
-use TutorTonyM\Subscriber\Http\Controllers\Controller;
 use TutorTonyM\Subscriber\Http\Requests\SubscriberValidation;
 use TutorTonyM\Subscriber\Models\Subscriber;
 use Exception;
