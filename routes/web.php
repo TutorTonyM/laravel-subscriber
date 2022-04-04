@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use TutorTonyM\Subscriber\Http\SubscriberController;
+use TutorTonyM\Subscriber\Http\Controllers\SubscriberController;
 
 /*
 |--------------------------------------------------------------------------
