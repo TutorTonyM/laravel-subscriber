@@ -46,7 +46,7 @@
         @endif
 
         @if(isset($error))
-            <span id="subscriber_email_error" {{ $button->attributes->class(['class' => "subscriber-validation-error-message"]) }}></span>
+            <span id="subscriber_email_error" {{ $error->attributes->class(["subscriber-validation-error-message"]) }}></span>
         @else
             <span id="subscriber_email_error" class="subscriber-validation-error-message"></span>
         @endif
